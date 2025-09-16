@@ -28,3 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: java -version
+
+      - name: Build Java 17 .jar
+        run: jar cfm app.jar Manifest.txt Simple.class Simple.java
