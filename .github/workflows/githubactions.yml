@@ -31,3 +31,11 @@ jobs:
 
       - name: Build Java 17 .jar
         run: jar cfm app.jar Manifest.txt Simple.class Simple.java
+
+      - name: Creates a release in GitHub and uploads attachments
+        run: |
+          gh release create v1.2.3 app.jar
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+       
